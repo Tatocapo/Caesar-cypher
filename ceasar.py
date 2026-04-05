@@ -7,9 +7,19 @@ def print_logo():
 def encrypt(word, shift):
     enc_word = ""
     for i in word:
-        alphabet_index = alphabet.index(i) + shift
-        alphabet_index %= len(alphabet)
+        alphabet_index = (alphabet.index(i) + shift) % len(alphabet)
         enc_word += alphabet[alphabet_index]
     print(f"Encrypted word: {enc_word}")
 
-encrypt("abc",52)
+def decrypt(word,shift):
+    dec_word = ""
+    for i in word:
+        alphabet_index = (alphabet.index(i) - shift) % len(alphabet)
+        dec_word += alphabet[alphabet_index]
+    print(f"Decrypted word: {dec_word}")
+
+
+
+
+encrypt("abc",1)
+decrypt("bcd",1)

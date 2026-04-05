@@ -18,8 +18,13 @@ def decrypt(word,shift):
         dec_word += alphabet[alphabet_index]
     print(f"Decrypted word: {dec_word}")
 
+def cesar_c(req, text, shift):
+    word = ""
+    if req == "decode":
+        shift = -shift
+    for i in text:
+        al_in = (alphabet.index(i) + shift) % len(alphabet)
+        word += alphabet[al_in]
+    print(f"Your {req} is: {word}")
 
 
-
-encrypt("abc",1)
-decrypt("bcd",1)
